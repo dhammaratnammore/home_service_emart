@@ -6,7 +6,7 @@ use App\Models\category_model;
 use App\Models\sub_category_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Expr\FuncCall;
+use PhpParser\Node\Expr\FuncCall;   
 
 class sub_category_controller extends Controller
 {
@@ -52,4 +52,39 @@ public function destroySubCategory($id)
    
     }
 
+
+    public function edit($id)
+{
+    $subcategory = sub_category_model::findOrFail($id);
+    $categories = category_model::all();
+    return view('pages.sub_categoryedit', compact('subcategory', 'categories'));
+}
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required',
+        'category_id' => 'required',
+        'status' => 'required|in:0,1',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $subcategory = sub_category_model::findOrFail($id);
+    $subcategory->name = $request->name;
+    $subcategory->category_id = $request->category_id;
+    $subcategory->status = $request->status;
+
+    if ($request->hasFile('image')) {
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('uplode'), $imageName);
+        $subcategory->image = $imageName;
+    }
+
+    $subcategory->save();
+
+    return redirect()->route('subcategorylist')->with('success', 'Subcategory updated successfully.');
+
+
+
+}
 }

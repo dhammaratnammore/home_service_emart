@@ -24,6 +24,9 @@ Route::get('/sub_categoryform',[sub_category_controller::class,'selectcat']);
 Route::post('/subcategoryadd', [sub_category_controller::class, 'subcategoryadd'])->name('subcategoryadd');
 Route::get('/subcategorylist', [sub_category_controller::class, 'showsubcategory'])->name('subcategorylist');
 Route::get('subcategory/{id}', [sub_category_controller::class, 'destroySubCategory'])->name('subcatdestroy');
+Route::get('/subcategory/edit/{id}', [sub_category_controller::class, 'edit'])->name('subcatedit');
+Route::put('/subcategory/update/{id}', [sub_category_controller::class, 'update'])->name('subcatupdate');
+
 
 
 

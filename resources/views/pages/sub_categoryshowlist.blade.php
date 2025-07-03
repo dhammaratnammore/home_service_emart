@@ -33,7 +33,7 @@
                                 <td>{{ $subcategory->status == 1 ? 'Active' : 'Deactive' }}</td>
                                 <td>
                                     <a class="btn btn-info m-2">View</a>
-                                    <a href="" class="btn btn-warning m-2">Edit</a>
+                                <a href="{{ route('subcatedit', ['id'=>$subcategory->sub_category_id]) }}" class="btn btn-warning m-2">Edit</a>
                                     <a href="{{ route('subcatdestroy',['id'=>$subcategory->sub_category_id]) }}">
                                         <button type="submit" class="btn btn-danger m-2"
                                             onclick="return confirm('Are you sure you want to delete this subcategory?')">
