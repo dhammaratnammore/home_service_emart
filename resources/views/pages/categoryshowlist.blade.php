@@ -23,7 +23,7 @@
                                 <td>{{ $cat->name }}</td>
                                 <td>
                                     @if($cat->image)
-                                        <img src="{{ asset('uplode/' . $cat->image) }}" alt="Category image" width="200">
+                                        <img src="{{ asset('uploads/' . $cat->image) }}" alt="Category image" width="200">
                                     @else
                                         No image
                                     @endif

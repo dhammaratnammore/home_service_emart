@@ -41,6 +41,26 @@ $subcategories = DB::table('sub_category')
         'data' => $subcategories
     ]);
 }
+public function getSubcategoryById($id)
+{
+    $subcategory = DB::table('sub_category')
+        ->join('category', 'sub_category.category_id', '=', 'category.category_id')
+        ->select('sub_category.*', 'category.name as category_name')
+        ->where('sub_category.sub_category_id', $id)
+        ->first();
+
+    if (!$subcategory) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Subcategory not found',
+        ], 404);
+    }
+
+    return response()->json([
+        'status' => true,
+        'data' => $subcategory,
+    ]);
+}
 
     /**
      * Store a newly created resource in storage.

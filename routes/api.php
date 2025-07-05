@@ -5,3 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/cat', [CategorysController::class, 'index']);
 Route::get('/subcategories/{id}', [CategorysController::class, 'getSubcategoryListApi']);
+Route::get('/subcategorys/{id}', [CategorysController::class, 'getSubcategoryById']);

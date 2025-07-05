@@ -12,7 +12,7 @@ class category_controller extends Controller
         $category->name =$request->name;
         if($request->hasFile("image")){
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('uplode'), $imageName);
+            $request->image->move(public_path('uploads'), $imageName);
             $category->image = $imageName;
         }
         $category->save();
@@ -57,7 +57,7 @@ public function update(Request $request, $id)
    if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uplode'), $imageName);
+            $image->move(public_path('uploads'), $imageName);
             $cat->image = $imageName;
         }
 

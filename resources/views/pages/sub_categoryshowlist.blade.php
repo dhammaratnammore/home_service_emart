@@ -25,14 +25,14 @@
                                 <td>{{ $subcategory->category_name ?? 'N/A' }}</td>
                                 <td>
                                     @if($subcategory->image)
-                                        <img src="{{ asset('uplode/' . $subcategory->image) }}" alt="Subcategory Image" width="100">
+                                        <img src="{{ asset('uploads/' . $subcategory->image) }}" alt="Subcategory Image" width="100">
                                     @else
                                         No image
                                     @endif
                                 </td>
                                 <td>{{ $subcategory->status == 1 ? 'Active' : 'Deactive' }}</td>
                                 <td>
-                                    <a class="btn btn-info m-2">View</a>
+                                    <a href="{{ route('subcatview', ['id'=>$subcategory->sub_category_id]) }}" class="btn btn-info m-2">View</a>
                                 <a href="{{ route('subcatedit', ['id'=>$subcategory->sub_category_id]) }}" class="btn btn-warning m-2">Edit</a>
                                     <a href="{{ route('subcatdestroy',['id'=>$subcategory->sub_category_id]) }}">
                                         <button type="submit" class="btn btn-danger m-2"

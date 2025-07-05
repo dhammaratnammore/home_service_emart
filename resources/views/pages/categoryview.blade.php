@@ -8,7 +8,7 @@
         <p><strong>Name:</strong> {{ $category->name }}</p>
         <p><strong>Image:</strong></p>
         @if($category->image)
-            <img src="{{ asset('uplode/' . $category->image) }}" alt="Category image" width="200">
+            <img src="{{ asset('uploads/' . $category->image) }}" alt="Category image" width="200">
         @else
             No image
         @endif

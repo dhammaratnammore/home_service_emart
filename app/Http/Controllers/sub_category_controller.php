@@ -76,7 +76,7 @@ public function update(Request $request, $id)
 
     if ($request->hasFile('image')) {
         $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('uplode'), $imageName);
+        $request->image->move(public_path('uploads'), $imageName);
         $subcategory->image = $imageName;
     }
 
@@ -87,4 +87,19 @@ public function update(Request $request, $id)
 
 
 }
+public function show($id)
+{
+    $subcategory = DB::table('sub_category')
+        ->join('category', 'sub_category.category_id', '=', 'category.category_id')
+        ->select('sub_category.*', 'category.name as category_name')
+        ->where('sub_category.sub_category_id', $id)
+        ->first();
+
+    if (!$subcategory) {
+        return redirect()->route('subcategorylist')->with('error', 'Subcategory not found');
+    }
+
+    return view('pages.sub_categoryview', compact('subcategory'));
 }
+
+   }
