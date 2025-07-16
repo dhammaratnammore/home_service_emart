@@ -20,6 +20,7 @@
             </div>
 
             <button type="submit" class="btn btn-success">Add Category</button>
+            <button type="submit" class="btn btn-success">Add Category</button>
         </form>
 
     </div>

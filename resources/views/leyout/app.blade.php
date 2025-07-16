@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <title>Home sarvisec admin panel</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -14,8 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -60,11 +60,17 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{ route('catlist') }}" class="nav-item nav-link "><i class="fa fa-list me-2"></i>Catagory List</a>                   
+
+                    <a href="{{ route('catlist') }}" class="nav-item nav-link "><i class="fa fa-list me-2"></i>Catagory List</a>
+
                     <a href="{{ route('subcategorylist') }}" class="nav-item nav-link"><i class="fa fa-list me-2"></i>Sub CAtegory List</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="index" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Registration List</a>
+
+                    <!-- <a href="{{ route('productlist') }}"><i class="fa fa-keyboard me-2"></i>Product List</a> -->
+
+                    <a href="{{ route('productlist') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Product List</a>
+
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -94,9 +100,11 @@
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
-                    <a href="categoryform"><button  type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Catagory</button></a>
-                    <a href="sub_categoryform"><button  type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Sub Category</button></a>
-                    
+                    <a href="categoryform"><button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Catagory</button></a>
+                    <a href="sub_categoryform"><button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Sub Category</button></a>
+
+                    <a href="product_form"><button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Product</button></a>
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
@@ -112,10 +120,10 @@
             </nav>
             <!-- Navbar End -->
 
-<div>
-    @yield('admincontent')
-</div>
-           
+            <div>
+                @yield('admincontent')
+            </div>
+
 
 
             <!-- Footer Start -->
@@ -123,7 +131,7 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="home">WAGGY</a>, All Right Reserved. 
+                            &copy; <a href="home">WAGGY</a>, All Right Reserved.
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
