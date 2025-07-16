@@ -78,8 +78,6 @@
             </nav>
         </div>
         <!-- Sidebar End -->
-
-
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
@@ -93,6 +91,7 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
+         
                 <div class="navbar-nav align-items-center ms-auto">
                     <a href="categoryform"><button  type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Catagory</button></a>
                     <a href="sub_categoryform"><button  type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i>Add Sub Category</button></a>
@@ -103,7 +102,7 @@
                             <span class="d-none d-lg-inline-flex">John Doe</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="{{ route('profile') }}" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>

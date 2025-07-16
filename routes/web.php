@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\category_controller;
 use App\Http\Controllers\sub_category_controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('leyout.app');
-});
+})->name('index');
 
 //category routes
 Route::get('/categoryform', function () {
@@ -28,8 +30,19 @@ Route::get('/subcategory/edit/{id}', [sub_category_controller::class, 'edit'])->
 Route::put('/subcategory/update/{id}', [sub_category_controller::class, 'update'])->name('subcatupdate');
 Route::get('/subcategory/view/{id}', [sub_category_controller::class, 'show'])->name('subcatview');
 
+Route::get('/profile', function () {
+    return view('pages.profilepage');
+})->middleware('auth')->name('profile');
 
 
 
 
 
+Auth::routes([
+    'login'=>false,
+]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
