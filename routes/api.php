@@ -14,5 +14,8 @@ Route::get('/subcategorys/{id}', [CategorysController::class, 'getSubcategoryByI
 Route::get('product',[ProductController::class,'list']);
 
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+// Route::middleware('auth:sanctum')->get('/users', [CategorysController::class, 'user']);
+
 
 

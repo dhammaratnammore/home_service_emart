@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\category_model;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,6 +61,16 @@ public function getSubcategoryById($id)
         'status' => true,
         'data' => $subcategory,
     ]);
+}
+public function user()
+{
+    $users = User::all();
+
+    return response()->json([
+        'status' => true,
+        'message' => 'User list fetched successfully',
+        'data' => $users
+    ], 200);
 }
 
     /**
