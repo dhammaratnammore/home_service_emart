@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategorysController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -11,3 +12,7 @@ Route::get('/subcategories/{id}', [CategorysController::class, 'getSubcategoryLi
 Route::get('/subcategorys/{id}', [CategorysController::class, 'getSubcategoryById']);
 
 Route::get('product',[ProductController::class,'list']);
+
+Route::post('/register', [AuthController::class, 'register']);
+
+
